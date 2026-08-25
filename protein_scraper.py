@@ -107,35 +107,84 @@ def create_bar_chart(frequencies, disease_keyword, protein_count, total_residues
     print(f"Chart saved to {filename}")
     plt.show()
 
-def main():
-    disease = "Alzheimer"
+def analyze_disease(disease_keyword, max_results=25):
+    """Run full pipeline for a single disease: fetch, extract, count, save."""
+    print(f"\nFetching {disease_keyword}-related proteins from UniProt...")
+    proteins = fetch_proteins(disease_keyword, max_results)
+    print(f"Retrieved {len(proteins)} proteins")
 
-    print(f"Fetching {disease}-related proteins from UniProt...")
-    proteins = fetch_proteins(disease)
-    print(f"Retrieved {len(proteins)} proteins\n")
-
-    print("Extracting sequences...")
     sequences = extract_sequences(proteins)
-    print(f"Successfully extracted {len(sequences)} sequences\n")
+    print(f"Extracted {len(sequences)} sequences")
 
-    for entry in sequences[:5]:
-        print(f"  {entry['accession']}: {entry['name']} ({entry['length']} aa)")
-    if len(sequences) > 5:
-        print(f"  ... and {len(sequences) - 5} more\n")
-
-    print("Counting amino acids...")
     counts, total = count_amino_acids(sequences)
     frequencies = calculate_frequencies(counts, total)
 
-    print(f"\nAmino Acid Frequencies ({total:,} total residues):")
-    print("-" * 40)
-    for aa, freq in frequencies.items():
-        print(f"  {aa}: {freq}% ({counts[aa]:,})")
+    save_results(sequences, frequencies, total, disease_keyword)
 
-    save_results(sequences, frequencies, total, disease)
+    return {
+        "disease": disease_keyword,
+        "protein_count": len(sequences),
+        "total_residues": total,
+        "frequencies": frequencies,
+    }
 
-    print("\nGenerating chart...")
-    create_bar_chart(frequencies, disease, len(sequences), total)
+def create_comparison_chart(data1, data2):
+    """Create a grouped bar chart comparing amino acid frequencies between two diseases."""
+    all_amino_acids = sorted(
+        set(list(data1["frequencies"].keys()) + list(data2["frequencies"].keys()))
+    )
+
+    freq1 = [data1["frequencies"].get(aa, 0) for aa in all_amino_acids]
+    freq2 = [data2["frequencies"].get(aa, 0) for aa in all_amino_acids]
+
+    x = range(len(all_amino_acids))
+    width = 0.35
+
+    plt.figure(figsize=(14, 6))
+    plt.bar(
+        [i - width / 2 for i in x], freq1, width,
+        label=data1["disease"], color="steelblue",
+    )
+    plt.bar(
+        [i + width / 2 for i in x], freq2, width,
+        label=data2["disease"], color="coral",
+    )
+
+    plt.title(
+        f"Amino Acid Frequency Comparison: {data1['disease']} vs {data2['disease']}",
+        fontsize=14,
+    )
+    plt.xlabel("Amino Acid", fontsize=12)
+    plt.ylabel("Frequency (%)", fontsize=12)
+    plt.xticks(list(x), all_amino_acids, fontsize=10)
+    plt.legend(fontsize=11)
+    plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+
+    plt.savefig("disease_comparison_chart.png", dpi=150)
+    print("Comparison chart saved to disease_comparison_chart.png")
+    plt.show()
+
+def main():
+    alzheimer_data = analyze_disease("Alzheimer")
+    parkinson_data = analyze_disease("Parkinson")
+
+    print("\nGenerating comparison chart...")
+    create_comparison_chart(alzheimer_data, parkinson_data)
+
+    print("\nGenerating individual charts...")
+    create_bar_chart(
+        alzheimer_data["frequencies"],
+        alzheimer_data["disease"],
+        alzheimer_data["protein_count"],
+        alzheimer_data["total_residues"],
+    )
+    create_bar_chart(
+        parkinson_data["frequencies"],
+        parkinson_data["disease"],
+        parkinson_data["protein_count"],
+        parkinson_data["total_residues"],
+    )
 
 if __name__ == "__main__":
     main()

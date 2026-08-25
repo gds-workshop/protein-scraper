@@ -1,0 +1,154 @@
+{
+  "disease": "Parkinson",
+  "protein_count": 25,
+  "total_residues": 21584,
+  "frequencies": {
+    "A": 6.93,
+    "C": 1.76,
+    "D": 4.99,
+    "E": 7.44,
+    "F": 3.87,
+    "G": 5.87,
+    "H": 2.32,
+    "I": 5.03,
+    "K": 6.12,
+    "L": 10.58,
+    "M": 2.25,
+    "N": 3.92,
+    "P": 5.89,
+    "Q": 5.12,
+    "R": 5.18,
+    "S": 7.95,
+    "T": 4.94,
+    "V": 6.37,
+    "W": 1.08,
+    "Y": 2.38
+  },
+  "proteins": [
+    {
+      "accession": "O60260",
+      "name": "E3 ubiquitin-protein ligase parkin",
+      "length": 465
+    },
+    {
+      "accession": "Q13637",
+      "name": "Ras-related protein Rab-32",
+      "length": 225
+    },
+    {
+      "accession": "Q9Y3I1",
+      "name": "F-box only protein 7",
+      "length": 522
+    },
+    {
+      "accession": "O43426",
+      "name": "Polyphosphatidylinositol phosphatase SYNJ1",
+      "length": 1573
+    },
+    {
+      "accession": "O75061",
+      "name": "Auxilin",
+      "length": 913
+    },
+    {
+      "accession": "Q9Y6H1",
+      "name": "Coiled-coil-helix-coiled-coil-helix domain-containing protein 2",
+      "length": 151
+    },
+    {
+      "accession": "Q9Y6H5",
+      "name": "Synphilin-1",
+      "length": 919
+    },
+    {
+      "accession": "O43464",
+      "name": "Serine protease HTRA2, mitochondrial",
+      "length": 458
+    },
+    {
+      "accession": "P04062",
+      "name": "Lysosomal acid glucosylceramidase",
+      "length": 536
+    },
+    {
+      "accession": "P09936",
+      "name": "Ubiquitin carboxyl-terminal hydrolase isozyme L1",
+      "length": 223
+    },
+    {
+      "accession": "Q96DA2",
+      "name": "Ras-related protein Rab-39B",
+      "length": 213
+    },
+    {
+      "accession": "Q9BSA9",
+      "name": "Endosomal/lysosomal proton channel TMEM175",
+      "length": 504
+    },
+    {
+      "accession": "P07602",
+      "name": "Prosaposin",
+      "length": 524
+    },
+    {
+      "accession": "Q04637",
+      "name": "Eukaryotic translation initiation factor 4 gamma 1",
+      "length": 1599
+    },
+    {
+      "accession": "Q709C8",
+      "name": "Intermembrane lipid transfer protein VPS13C",
+      "length": 3753
+    },
+    {
+      "accession": "Q96A57",
+      "name": "Transmembrane protein 230",
+      "length": 120
+    },
+    {
+      "accession": "Q96QK1",
+      "name": "Vacuolar protein sorting-associated protein 35",
+      "length": 796
+    },
+    {
+      "accession": "O60733",
+      "name": "85/88 kDa calcium-independent phospholipase A2",
+      "length": 806
+    },
+    {
+      "accession": "O75165",
+      "name": "DnaJ homolog subfamily C member 13",
+      "length": 2243
+    },
+    {
+      "accession": "P07101",
+      "name": "Tyrosine 3-monooxygenase",
+      "length": 528
+    },
+    {
+      "accession": "P37840",
+      "name": "Alpha-synuclein",
+      "length": 140
+    },
+    {
+      "accession": "Q15257",
+      "name": "Serine/threonine-protein phosphatase 2A activator",
+      "length": 358
+    },
+    {
+      "accession": "Q5S007",
+      "name": "Leucine-rich repeat serine/threonine-protein kinase 2",
+      "length": 2527
+    },
+    {
+      "accession": "Q6Y7W6",
+      "name": "GRB10-interacting GYF protein 2",
+      "length": 1299
+    },
+    {
+      "accession": "Q99497",
+      "name": "Parkinson disease protein 7",
+      "length": 189
+    }
+  ]
+}
