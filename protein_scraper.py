@@ -82,6 +82,30 @@ def save_results(sequences, frequencies, total, disease_keyword):
     print(f"Results saved to {filename}")
     return filename
 
+def create_bar_chart(frequencies, disease_keyword, protein_count, total_residues):
+    """Create and save a bar chart of amino acid frequencies."""
+    amino_acids = list(frequencies.keys())
+    percentages = list(frequencies.values())
+
+    plt.figure(figsize=(12, 6))
+    plt.bar(amino_acids, percentages, color="steelblue", edgecolor="white")
+
+    plt.title(
+        f"Amino Acid Frequencies in {disease_keyword}-Related Human Proteins\n"
+        f"({protein_count} proteins, {total_residues:,} total residues)",
+        fontsize=14,
+    )
+    plt.xlabel("Amino Acid", fontsize=12)
+    plt.ylabel("Frequency (%)", fontsize=12)
+    plt.xticks(fontsize=10)
+    plt.yticks(fontsize=10)
+    plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+
+    filename = f"{disease_keyword.lower()}_amino_acid_chart.png"
+    plt.savefig(filename, dpi=150)
+    print(f"Chart saved to {filename}")
+    plt.show()
 
 def main():
     disease = "Alzheimer"
@@ -109,6 +133,9 @@ def main():
         print(f"  {aa}: {freq}% ({counts[aa]:,})")
 
     save_results(sequences, frequencies, total, disease)
+
+    print("\nGenerating chart...")
+    create_bar_chart(frequencies, disease, len(sequences), total)
 
 if __name__ == "__main__":
     main()
