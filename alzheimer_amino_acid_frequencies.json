@@ -1,0 +1,124 @@
+{
+  "disease": "Alzheimer",
+  "protein_count": 19,
+  "total_residues": 12880,
+  "frequencies": {
+    "A": 7.72,
+    "C": 2.3,
+    "D": 5.04,
+    "E": 6.89,
+    "F": 3.64,
+    "G": 7.11,
+    "H": 2.34,
+    "I": 4.12,
+    "K": 4.7,
+    "L": 10.43,
+    "M": 2.22,
+    "N": 3.44,
+    "P": 6.29,
+    "Q": 4.15,
+    "R": 5.1,
+    "S": 7.57,
+    "T": 5.92,
+    "V": 6.51,
+    "W": 1.46,
+    "Y": 3.05
+  },
+  "proteins": [
+    {
+      "accession": "P02649",
+      "name": "Apolipoprotein E",
+      "length": 317
+    },
+    {
+      "accession": "Q92673",
+      "name": "Sortilin-related receptor",
+      "length": 2214
+    },
+    {
+      "accession": "P05067",
+      "name": "Amyloid-beta precursor protein",
+      "length": 770
+    },
+    {
+      "accession": "P10636",
+      "name": "Microtubule-associated protein tau",
+      "length": 758
+    },
+    {
+      "accession": "P49768",
+      "name": "Presenilin-1",
+      "length": 467
+    },
+    {
+      "accession": "O95185",
+      "name": "Netrin receptor UNC5C",
+      "length": 931
+    },
+    {
+      "accession": "P03891",
+      "name": "NADH-ubiquinone oxidoreductase chain 2",
+      "length": 347
+    },
+    {
+      "accession": "P49810",
+      "name": "Presenilin-2",
+      "length": 448
+    },
+    {
+      "accession": "P07339",
+      "name": "Cathepsin D",
+      "length": 412
+    },
+    {
+      "accession": "P37840",
+      "name": "Alpha-synuclein",
+      "length": 140
+    },
+    {
+      "accession": "P53041",
+      "name": "Serine/threonine-protein phosphatase 5",
+      "length": 499
+    },
+    {
+      "accession": "Q8IZY2",
+      "name": "Phospholipid-transporting ATPase ABCA7",
+      "length": 2146
+    },
+    {
+      "accession": "O14672",
+      "name": "Disintegrin and metalloproteinase domain-containing protein 10",
+      "length": 748
+    },
+    {
+      "accession": "P03886",
+      "name": "NADH-ubiquinone oxidoreductase chain 1",
+      "length": 318
+    },
+    {
+      "accession": "P49840",
+      "name": "Glycogen synthase kinase-3 alpha",
+      "length": 483
+    },
+    {
+      "accession": "P49841",
+      "name": "Glycogen synthase kinase-3 beta",
+      "length": 420
+    },
+    {
+      "accession": "Q16643",
+      "name": "Drebrin",
+      "length": 649
+    },
+    {
+      "accession": "Q9NZC2",
+      "name": "Triggering receptor expressed on myeloid cells 2",
+      "length": 230
+    },
+    {
+      "accession": "Q86X27",
+      "name": "Ras-specific guanine nucleotide-releasing factor RalGPS2",
+      "length": 583
+    }
+  ]
+}
